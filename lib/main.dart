@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'login/login_page.dart';
+import 'package:test_1/barcode/barcode.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: login_page(),
+      home: barcode(),
     );
   }
 }

@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:test_1/login/form.dart';
+import 'package:test_1/privacy_instruction/privacy_instr.dart';
 
 // ignore: camel_case_types
 class login_page extends StatefulWidget {
@@ -9,6 +12,17 @@ class login_page extends StatefulWidget {
 
 // ignore: camel_case_types
 class _login_pageState extends State<login_page> {
+  @override
+  void initState() {
+    setState(() {
+      Timer(
+          Duration(seconds: 10),
+          () => Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (BuildContext context) => privacy_inst())));
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_1/Design/body.dart';
+import 'package:test_1/Theme/theme.dart';
 
 class Privacy extends StatefulWidget {
   @override
@@ -8,6 +11,17 @@ class Privacy extends StatefulWidget {
 }
 
 class _PrivacyState extends State<Privacy> {
+  @override
+  void initState() {
+    setState(() {
+      Timer(
+          Duration(seconds: 10),
+          () => Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (BuildContext context) => theme())));
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
