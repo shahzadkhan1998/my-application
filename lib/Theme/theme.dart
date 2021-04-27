@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:test_1/barcode/barcode.dart';
 
 class theme extends StatefulWidget {
   @override
@@ -10,6 +13,12 @@ class _themeState extends State<theme> {
   @override
   void initState() {
     isSelected = [true, false];
+    setState(() {
+      Timer(
+          Duration(seconds: 10),
+          () => Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (BuildContext context) => barcode())));
+    });
     super.initState();
   }
 
